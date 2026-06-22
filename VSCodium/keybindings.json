@@ -1,0 +1,246 @@
+[
+  // ================================
+  // ======= PANE MANAGEMENT ========
+  // ================================
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!editorTextFocus"
+  },
+  // =============================
+  // ======= LEADER BINDS ========
+  // =============================
+  {
+    "key": "space w", // [W]rite current file,
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.files.save",
+        "editor.action.formatDocument",
+      ],
+    },
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+  },
+  {
+    "key": "space g g", // [G] [G]it
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.view.scm",
+        "workbench.scm.focus"
+      ],
+    },
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+  },
+  {
+    "key": "space q", // [Q]uit
+    "command": "workbench.action.closeActiveEditor",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+  },
+  {
+    "key": "space a a",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space a k",
+    "command": "workbench.view.extension.kilo-code-ActivityBar",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "viewContainer.workbench.view.explorer.enabled && vim.mode == 'Normal' && editorTextFocus && sideBarVisible && activeViewlet == 'workbench.view.explorer'"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && vim.mode == 'Normal' && editorTextFocus && (!sideBarVisible || activeViewlet != 'workbench.view.explorer')"
+  },
+  {
+    "key": "space f s",
+    "command": "workbench.action.findInFiles",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space f b",
+    "command": "workbench.action.showAllEditors",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // =============================
+  // ======= TERMINAL ========
+  // =============================
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  // =============================
+  // ======= FILE EXPLORER ========
+  // =============================
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.expand",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "actions.findWithSelection"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-actions.findWithSelection"
+  },
+  {
+    "key": "enter",
+    "command": "list.toggleExpand",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus",
+  },
+  {
+    "key": "enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus",
+  },
+  //   {
+  //       "key": "ctrl+l",
+  //       "command": "workbench.action.focusAuxiliaryBar",
+  //       "when": "editorTextFocus && vim.mode == 'Normal'"
+  //   },
+  //   {
+  //       "key": "ctrl+l",
+  //       "command": "workbench.action.focusFirstEditorGroup",
+  //       "when": "sideBarFocus"
+  //   },
+  // Next terminal
+  //   {
+  //       "key": "a",
+  //       "command": "git.stageHunk",
+  //       "when": "dirtyDiffVisible"
+  //   },
+  //   {
+  //       "key": "d",
+  //       "command": "git.revertSelectedRanges",
+  //       "when": "dirtyDiffVisible"
+  //   },
+  // =============================
+  // ======= HARPOON ========
+  // =============================
+  {
+    "key": "space h a",
+    "command": "cursor-harpoon.addEditor",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space h e",
+    "command": "cursor-harpoon.editEditors",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space p e",
+    "command": "cursor-harpoon.editorGlobalQuickPick",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space 1",
+    "command": "cursor-harpoon.gotoEditor1",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space 2",
+    "command": "cursor-harpoon.gotoEditor2",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "space 3",
+    "command": "cursor-harpoon.gotoEditor3",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  // =============================
+  // ======= GIT ========
+  // =============================
+  {
+    "key": "cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  }
+]

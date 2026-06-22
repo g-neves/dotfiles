@@ -1,0 +1,179 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.fontFamily": "'Iosevka Nerd Font Mono', 'ComicCodeLigatures() Nerd Font', 'JetBrainsMono Nerd Font', 'MonaspiceXe Nerd Font Propo', 'AdwaitaMono Nerd Font Mono',Menlo, Monaco, 'Courier New', monospace",
+  "editor.lineNumbers": "relative",
+  "chat.viewSessions.orientation": "stacked",
+  "chat.instructionsFilesLocations": {
+    "~/.config/github-copilot/copilot-instructions.md": true
+  },
+  "vim.leader": "<space>",
+  "vim.timeout": 300,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<Esc>"
+      ],
+      "when": [
+        "editorFocus"
+      ],
+      "commands": [
+        ":nohl"
+      ],
+      "silent": true,
+    },
+    // NAVIGATION
+    // switch b/w buffers
+    {
+      "before": [
+        "<S-h>"
+      ],
+      "commands": [
+        ":bprevious"
+      ]
+    },
+    {
+      "before": [
+        "<S-l>"
+      ],
+      "commands": [
+        ":bnext"
+      ]
+    },
+    // splits
+    {
+      "before": [
+        "<leader>",
+        "v"
+      ],
+      "commands": [
+        ":vsplit"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        ":split"
+      ]
+    },
+    // panes
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
+      ]
+    }
+  ],
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "editor.fontLigatures": true,
+  "telemetry.telemetryLevel": "off",
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "Before making any changes, always explain what you plan to change and why. Then explicitly ask for confirmation before proceeding."
+    }
+  ],
+  "basedpyright.importStrategy": "useBundled",
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal",
+    "kilo-code.new.agentManager.runScript"
+  ],
+  "kilo-code.new.autoApprove.enabled": false,
+  "kilo-code.new.showTaskTimeline": false,
+  "problems.decorations.enabled": false,
+  "editor.foldingStrategy": "indentation",
+  "chatgpt.composerEnterBehavior": "enter",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "go": false
+  },
+  "editor.accessibilitySupport": "off",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilotcli:claude-sonnet-4.6",
+  "gitlens.hovers.annotations.changes": "hunk",
+  "gitlens.hovers.currentLine.changes": "hunk",
+  "basedpyright.analysis.inlayHints.variableTypes": false,
+  "continue.enableTabAutocomplete": false,
+  "chat.disableAIFeatures": false,
+  "basedpyright.analysis.inlayHints.functionReturnTypes": false,
+  "basedpyright.analysis.inlayHints.callArgumentNames": false,
+  "basedpyright.analysis.inlayHints.genericTypes": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.genericParameterHints.const.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "chatgpt.commentCodeLensEnabled": false,
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "catppuccin.boldKeywords": false,
+  "catppuccin.italicKeywords": false,
+  "terminal.integrated.fontSize": 14,
+  "kilo-code.new.agentWorkStyle": "skipped",
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "REVIEW:",
+    "BUGFIX:",
+    {
+      "text": "NOTE:",
+      "color": "#ff0000",
+      "backgroundColor": "blue",
+      "overviewRulerColor": "grey"
+    },
+    {
+      "text": "HACK:",
+      "color": "#000",
+      "isWholeLine": false,
+    },
+    {
+      "text": "TODO:",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "2px", // NOTE: using borderRadius along with `border` or you will see nothing change
+      "backgroundColor": "rgba(0,0,0,.2)",
+      //other styling properties goes here ... 
+    }
+  ]
+}
